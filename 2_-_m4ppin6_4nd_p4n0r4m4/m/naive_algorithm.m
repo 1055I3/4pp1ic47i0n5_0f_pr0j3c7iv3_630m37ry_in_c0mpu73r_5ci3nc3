@@ -11,5 +11,6 @@ p2 = find_base_mapping(projection);
 % the projection is calculated as composition of
 % the base to the original inverse projection and
 % the base to the projected quadrangle
-projection_matrix = dot(p2, inv(p1), 4);
+%projection_matrix = p2 * inv(p1);
+projection_matrix = p2/p1
 end
