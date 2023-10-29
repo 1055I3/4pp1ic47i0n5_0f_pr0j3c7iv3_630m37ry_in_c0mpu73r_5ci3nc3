@@ -1,6 +1,8 @@
 ## Find the Invisible Point
 
-Potrebno je napisati funkciju Nevidljivo[P1, P2, P3, P5, P6, P7, P8] koja za sedam vidljivih temena kvadra oblika  Pi(x,y), vraca nevidljivo teme P4.
+Write a script that for given seven visible vertices P1, P2, P3, P5, P6, P7, P8 finds invisible vertex P4.
+
+![The box](img.jpg)
 
 Kao rezultat domaćeg priložiti:
 
