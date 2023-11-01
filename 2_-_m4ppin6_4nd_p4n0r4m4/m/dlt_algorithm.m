@@ -1,6 +1,6 @@
 function [projection_matrix] = dlt_algorithm(figure, projection)
-%dlt_algorithm Summary of this function goes here
-%   Detailed explanation goes here
+%dlt_algorithm Calculates projection matrix for given input
+%   It takes figure and its projection and returns projection matrix.
 
 [n, ~] = size(figure);
 A = zeros(2*n, 9);
