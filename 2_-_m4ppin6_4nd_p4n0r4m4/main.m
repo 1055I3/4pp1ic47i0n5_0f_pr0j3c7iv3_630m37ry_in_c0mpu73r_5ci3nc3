@@ -54,3 +54,10 @@ disp('With 6 points - Normalized DLT algorithm output:');
 P_dlt_normalized = normalized_dlt(trapezoid, rectangle);
 P_dlt_normalized_scaled = P_dlt_normalized / P_dlt_normalized(1, 1) * P_dlt(1, 1);
 disp(P_dlt_normalized_scaled);
+
+% make panorama from two images
+img1 = imread('slika1.jpg');
+img2 = imread('slika2.jpg');
+panorama = make_panorama(img1, img2);
+imwrite(panorama, 'panorama.jpg');
+disp('panorama saved in ./panorama.jpg');
