@@ -39,7 +39,7 @@ height = round(y_max - y_min);
 
 % make panorama
 panorama = zeros([height width 3], 'like', img1);
-panorama(1:img1_size(1), 1:img1_size(2), :) = img1;
+% panorama(1:img1_size(1), 1:img1_size(2), :) = img1;
 
 blender = vision.AlphaBlender('Operation', 'Binary mask', 'MaskSource', 'Input port');  
 
@@ -47,6 +47,15 @@ blender = vision.AlphaBlender('Operation', 'Binary mask', 'MaskSource', 'Input p
 x_limits = [x_min x_max];
 y_limits = [y_min y_max];
 panorama_view = imref2d([height width], x_limits, y_limits);
+
+% transform img1 into the panorama
+warped_image = imwarp(img1, projtform2d, 'OutputView', panorama_view);
+                  
+% generate a binary mask
+mask = imwarp(true(img1_size(1), img1_size(2)), projtform2d, 'OutputView', panorama_view);
+
+% overlay the warped_image onto the panorama
+panorama = step(blender, panorama, warped_image, mask);
 
 % transform img2 into the panorama
 warped_image = imwarp(img2, H, 'OutputView', panorama_view);
