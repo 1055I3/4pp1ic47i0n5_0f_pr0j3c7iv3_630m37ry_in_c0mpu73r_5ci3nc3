@@ -1,3 +1,5 @@
+## Mappings and Panorama
+
 Implement naive alignment algorithm, DLT algorithm, and modified DLT algorithm with normalization.
 Test what happens when coordinates are altered and compare width DLT algorithm with more than 4 corresponding keypoints.
 
