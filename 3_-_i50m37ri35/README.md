@@ -20,7 +20,7 @@ First, calculate rotation matrix $A$ for the 3 Euler angles.
 Follow by representing the matrix as a rotation using angle and axis.
 Then, convert the axis and angle back into matrix representation of the rotation using Rodrigues' rotation formula.
 Finally, convert back the matrix $A$ to Euler angles.
-The resulting angles should be the same as the4 initial angles.
+The resulting angles should be the same as the initial 4 angles.
 
 Testing the final two functions.
 Using previosly calculated rotation representation with angle and axis, calculate unit quaternion.
