@@ -23,3 +23,18 @@ disp(p);
 A = Rodrigez(p, tau);
 disp('Rodrigez:');
 disp(A);
+
+[phi, theta, psi] = A2Euler(A);
+disp('A2Euler:');
+disp(phi);
+disp(theta);
+disp(psi);
+
+q = AxisAngle2Q(p, tau);
+disp('AxisAngle2Q:');
+disp(q);
+
+[p, tau] = Q2AxisAngle(q);
+disp('Q2AxisAngle:');
+disp(tau);
+disp(p);

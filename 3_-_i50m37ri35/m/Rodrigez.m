@@ -12,9 +12,11 @@ p_x = [0, -p(3), p(2);
        -p(2), p(1), 0];
 
 % p*pt
-R = p * p.';
+R = p.' * p;
+
 % cos(phi)*(E-p*pt)
 D = cos(phi) * (eye(3) - R);
+
 % sin(phi)*p_x
 G = sin(phi) * p_x;
 
