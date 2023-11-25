@@ -1,21 +1,28 @@
 ## Isometries
 
-Implementirati i testirati 6 funkcija koji povezuju različito predstavljanje kretanja prostora (vidi ispod)
+Implement and test 6 functions that connect different representations of motion in space.
 
-1. Euler2A[ \phi , \theta , \psi ] - vraca matricu A = RZ( \psi )RY ( \theta )RX( \phi ):
+1.  Euler2A[ $\phi$, $\theta$, $\psi$ ] - returns matrix $A = RZ(\psi)RY(\theta$)RX(\phi)$.
 
-2. AxisAngle[A] - vraca jedinični vektor p = (px; py; pz) i ugao \phi \in [0;    \pi ] tako da A = Rp( \phi ):
+2. AxisAngle[A] - returns unit vector $p = (px; py; pz)$ and angle $\phi \in [0; \pi]$ such that $A = Rp(\phi)$.
 
-3. Rodrigez[p; \phi ] - vraća matricu rotacije oko orjentisanog (jediničnog) vektora p za ugao \phi .
+3. Rodrigez[p; $\phi$] - returns rotation matrix for rotation around unit vector $p$ for angle $\phi$.
 
-4. A2Euler[A] - za datu ortogonalnu matricu A, det(A) = 1, vraca Ojlerove uglove   \psi , \theta , \phi redom.
+4. A2Euler[A] - for given orthogonal matrix $A$, i.e. $det(A) = 1$, returns Euler angles $\psi, \theta, \phi$ respectively.
 
-5. AxisAngle2Q[p; \phi ] - vraća jednični kvaternion q = (x; y; z;w) tako da Cq = Rp( \phi ). Vektor p je jednični.
+5. AxisAngle2Q[p; $\phi$] - returns unit quaternion $q = (x; y; z; w)$ such that $Cq = Rp(\phi)$. Vector $p$ is a unit vector.
 
-6. Q2AxisAngle[q] - vraćajedinični vektor p = (px; py; pz) i ugao  \phi \in  [0; \pi ]  tako da kvaternion predstavlja rotaciju Rp( \phi ), tj. Cq = Rp( \phi )
+6. Q2AxisAngle[q] - returns unit vector $p = (px; py; pz)$ and angle $\phi \in [0; \pi]$ such that the quaternion represents rotation $Rp(\phi)$, i.e. $Cq = Rp(\phi)$.
 
-Prve 4 funkcije: Krenuti od 3 Ojlerova ugla (na osnovu vaseg broja indeksa), za njih izracunati matricu A; nju da predstavi preko ose i ugla, za dobijenu osu i ugao da odredi matricu A  Rodrigezovom fomrulom, a zatim matricu A zapisati preko Ojlerovih uglova. 
+Testing the first four functions.
+Start with 3 Euler angles, based on your student index number.
+First, calculate rotation matrix $A$ for the 3 Euler angles.
+Follow by representing the matrix as a rotation using angle and axis.
+Then, convert the axis and angle back into matrix representation of the rotation using Rodrigues' rotation formula.
+Finally, convert back the matrix $A$ to Euler angles.
+The resulting angles should be the same as the4 initial angles.
 
-Dobijeni uglovi bi trebali biti isti kao uglovi od kojih ste krenuli. 
-
-5\. i 6. funkcija: Na osnovu rotacije preko ose i ugla koju ste prethodno koristili, dobijete jedinicni kvaternion, a zatim ga vratite u (trebalo bi opet istu) osu i ugao.
+Testing the final two functions.
+Using previosly calculated rotation representation with angle and axis, calculate unit quaternion.
+Follow by converting the quaternion back to axis and angle representation of the rotation.
+Again, the resulting and initial numbers should be the same.
