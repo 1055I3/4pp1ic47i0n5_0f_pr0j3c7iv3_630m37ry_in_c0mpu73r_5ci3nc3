@@ -166,6 +166,7 @@ FF1 = U * S * V;
 % disp('fundamental matrix')
 % disp(FF1);
 
+% use fundamental matrix that has determinant closer to zero
 if abs(det(FF1)) < abs(det(FF))
     FF = FF1;
 end
@@ -174,3 +175,51 @@ disp('fundamental matrix:');
 disp(FF);
 
 % triangulation
+
+% canonical camera matrix
+T1 = [1, 0, 0, 0;
+      0, 1, 0, 0;
+      0, 0, 1, 0];
+
+disp('canonical camera matrix:');
+disp(T1);
+
+% vector multiplication matrix
+E2 = [0, -e2(3), e2(2);
+      e2(3), 0, -e2(1);
+      -e2(2), e2(1), 0];
+
+% camera matrix for the second camera
+T2 = [E2 * FF, e2];
+
+disp('second camera matrix:');
+disp(T2);
+
+reconstructed = zeros(length(L), 3);
+for ii = 1:length(L)
+    % for each point there is a system of 4 equations with 4 homogenous variables
+    equations = [L(ii, 2)*T1(3, :) - L(ii, 3)*T1(2, :);
+			    -L(ii, 1)*T1(3, :) + L(ii, 3)*T1(1, :);
+			     R(ii, 2)*T2(3, :) - R(ii, 3)*T2(2, :);
+			    -R(ii, 1)*T2(3, :) + R(ii, 3)*T2(1, :)];
+
+    % calculate 3D coordinates
+    [~, ~, V] = svd(equations);
+    P = V(end, :);
+    P = P ./ P(4);
+
+    reconstructed(ii, :) = P(1:end-1);
+end
+
+% multiply z coordinate with a couple of hundreds
+tmp = eye(3);
+tmp(3, 3) = 400;
+reconstructed_400 = zeros(length(L), 3);
+for ii = 1:length(L)
+    reconstructed_400(ii, :) = tmp * reconstructed(ii, :).';
+end
+
+disp('3D reconstruction:');
+disp(reconstructed_400);
+
+% plotting
