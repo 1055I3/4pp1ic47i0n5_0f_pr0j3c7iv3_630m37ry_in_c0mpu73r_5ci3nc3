@@ -1,9 +1,10 @@
 ## SLERP animation
 
-1. Implementirati funkciju slerp[q1, q2, tm, t] - vraća  jedinični kvaternion q koji predstavlja SLerp interpolaciju izmedju kvaterniona q1 i q2, u trenutku t ∈ (0, tm). Kvaternioni q1, q2 su jednični (važi slerp[q1, q2, tm, 0] = q1, slerp[q1, q2, tm, tm] = q2.) 
+1. Implement function SLerp[$q_1$, $q_2$, $t_m$, $t$] which returns unit quaternion $q$ that represents *SLerp* interpolation between quaternions $q_1$ and $q_2$ im moment $t \in (0, t_m)$.
+Quaternions $q_1$ and $q_2$ are unit quaternions, and SLerp[$q_1$, $q_2$, $t_m$, $0$] = $q_1$, SLerp[$q_1$, $q_2$, $t_m$, $t_m$] = q2 holds.
 
-2. Zatim napraviti animaciju koja radi sledeće: zadaje objekat (po vašem izboru) u dve položaja 
-  - pocetni polozaj sa centrom u koordinatnom pocetku, orjentacija zadata Ojlerovim uglovima  $\psi = 0, \theta = \frac{\pi}{2}, \phi =0$
-  - krajnji polozaj sa centrom transliranim u neku tacku (recimo (1,2,3)), orjentacija zadata Ojlerovim uglovima iz treceg domaceg (zavise od broja indeksa)
+2. Then make animation for given object in two positions.
+  - initial position has center in coordinate origin, with orientation given in Euiler angles $\psi = 0, \theta = \frac{\pi}{2}, \phi =0$
+  - final position with center translated to some arbitrary point, say $(1, 2, 3)$, and orientation given with Euler angles from the third homework, dependent on student index number.
 
-Zatim pravite animaciju koja prevodi jedna objekat u drugi (linearno interpolira translaciju izmedju centara objekata, a Slerp interpolira njihovu orjentaciju). Koristiti programski jezik po vasem izboru.
+Make animation which transforms one object into another using linear interpolation between object centers for translation and SLerp interpolation for orientation.
