@@ -7,4 +7,4 @@
 
 A collection of homeworks for subject "Applications of projective geometry in computer science" at Mathematical Faculty - University of Belgrade.
 
-I used `Matlab 23.2.0.2365128 (R2023b)` with a number of add-ons such as `Computer Vision Toolbox` on ` Windows 10 Pro 22H2`.
+I used `Matlab 23.2.0.2365128 (R2023b)` with a number of add-ons such as `Computer Vision Toolbox` on ` Windows 10 Pro 22H2` system.
