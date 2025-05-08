@@ -3,7 +3,7 @@
 [![Windows](https://img.shields.io/badge/Windows-0078D6)](https://en.wikipedia.org/wiki/Windows_10)
 [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
-# Applications of Prijective Geometry in Computer Science
+# Applications of Projective Geometry in Computer Science
 
 A collection of homeworks for subject "Applications of projective geometry in computer science" at Mathematical Faculty - University of Belgrade.
 
